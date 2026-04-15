@@ -48,7 +48,7 @@ def plot_weight_distribution(model, bins=256):
         if param.dim() > 1:  
             ax.hist(param.detach().view(-1).cpu(), bins=bins, density=True)
 ```
-![[Pasted image 20260414223557.png|531]]
+![1](./pics/Pasted image 20260414223557.png)
 
 如图所示，除最后一层分类头外，其它层均服从均值为 0 的无偏正态分布，这意味着占很大比例的参数是可以被移除的，这为模型压缩留下了很大的空间。
 
@@ -228,7 +228,7 @@ pruned model has accuracy=28.14%
 
 在所有层中移除前 30% 的通道会导致显著的准确率下降。解决该问题的一种方法是寻找不太重要的通道权重进行移除：一个常用的重要性判定标准是使用对应每个输入通道权重的 Frobenius 范数。
 
-> $importance_{i} = \|W_{i}\|_2, \;\; i = 0, 1, 2,\cdots, \#\mathrm{in\_channels}-1$
+> $importance_{i} = \|W_{i}\|_2, \;\; i = 0, 1, 2, \cdots, \mathrm{num\_channels} - 1$
 
 我们可以将通道权重从重要到不重要进行排序，然后为每一层保留前 k 个通道。
 ```
