@@ -48,7 +48,7 @@ def plot_weight_distribution(model, bins=256):
         if param.dim() > 1:  
             ax.hist(param.detach().view(-1).cpu(), bins=bins, density=True)
 ```
-![1](./pics/Pasted image 20260414223557.png)
+![](./pics/Pasted_image_20260414223557.png)
 
 如图所示，除最后一层分类头外，其它层均服从均值为 0 的无偏正态分布，这意味着占很大比例的参数是可以被移除的，这为模型压缩留下了很大的空间。
 
@@ -91,7 +91,7 @@ def test_fine_grained_prune():
     print(f"剪枝前稀疏度: {get_sparsity(test_tensor)}")  
     print(f"剪枝后稀疏度: {get_sparsity(test_tensor)}")
 ```
-![[Pasted image 20260414230059.png]]
+![](./pics/Pasted_image_20260414230059.png)
 ```
 *Test fine_grained_prune() 
 	target sparsity: 0.75 
@@ -116,13 +116,13 @@ sparsity=1-target_element/total_element
 
 在灵敏度分析中，每次对于神经网络中的一层，逐步进行剪枝，以获得该层对于剪枝的灵敏度。
 
-![[Pasted image 20260414233152.png]]
+![](./pics/Pasted_image_20260414233152.png)
 
 从图中可以看到大部分层中，随着稀疏度的增加，模型精度相应变低，不同层的敏感程度不同，第 0 个卷积层对稀疏度最敏感。
 
 除了准确性，每一层的参数数量也会影响稀疏性选择的决策。参数更多的层需要更大的稀疏度。
 
-![[Pasted image 20260414233815.png]]
+![](./pics/Pasted_image_20260414233815.png)
 
 从图中可以看到更深的层的参数量会更多，对这些层进行剪枝能够使模型得到更好的稀疏度的同时保留大量的能力。
 
@@ -146,7 +146,7 @@ sparsity_dict = {
 	'classifier.weight': 0  
 }
 ```
-![[Pasted image 20260414234519.png]]
+![](./pics/Pasted_image_20260414234519.png)
 ```
 Sparse model has size=8.28 MiB = 23.51% of dense model size
 Sparse model has accuracy=85.69% before fintuning
