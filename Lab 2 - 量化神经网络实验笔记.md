@@ -75,7 +75,7 @@ tensor([[-0.3747, 0.0874, 0.3200, -0.4868, 0.4404],
 		num unique values after k-means quantization: 4 
 * Test passed.
 ```
-![[Pasted image 20260415223103.png|690]]
+![](./pics/Pasted_image_20260415223103.png)
 该代码单元执行了2位K-means量化，并绘制了量化前后的张量。每个簇都用独特的颜色表示。在量化后的张量中绘制了4种不同的颜色，即分为了四个簇。对于n位的K-means量化，应该分类为$2^n$个簇。
 
 下一步是将K-means量化函数封装到一个类中，用于对整个模型进行量化。在类 KMeansQuantizer中，我们需要保存码本记录（即centroids和 labels），以便在模型权重发生变化时可以应用或更新这些码本；并使用这个函数，将模型量化为8/4/2位。
@@ -178,7 +178,7 @@ test_linear_quantize()
   zero point: -1 
 * Test passed.
 ```
-![[Pasted image 20260415233842.png]]
+![](./pics/Pasted_image_20260415233842.png)
 
 ### **3.4 确定线性量化中的缩放因子与零点**
 
@@ -220,7 +220,7 @@ def linear_quantize_feature(fp_tensor, bitwidth):
 ```
 
 同时观察权重值的分布。
-![[Pasted image 20260415235513.png]]
+![](Pasted image 20260415235513.png)
 
 从上面的直方图可以看出，权重值的分布几乎关于0对称（本例中的分类器除外）。因此，在量化权重时，我们通常将零点设为 $Z=0$。
 由 $r = S(q-Z)$ 可得：
@@ -254,8 +254,8 @@ def linear_quantize_weight_per_channel(tensor, bitwidth):
 
 如下是在不同位宽下对权重应用线性量化时的权重分布和模型大小的展示。
 
-![[Pasted image 20260415235941.png]]
-![[Pasted image 20260415235944.png]]
+![](./pics/Pasted_image_20260415235941.png)
+![](./pics/Pasted_image_20260415235944.png)
 
 
 ## **4. 量化推理**
@@ -405,7 +405,7 @@ test_quantized_fc()
 	  output channels: 8 
 * Test passed.
 ```
-![[Pasted image 20260416111305.png]]
+![](./pics/Pasted_image_20260416111305.png)
 
 量化卷积与量化全连接层的操作相同。
 
