@@ -220,7 +220,7 @@ def linear_quantize_feature(fp_tensor, bitwidth):
 ```
 
 同时观察权重值的分布。
-![](Pasted image 20260415235513.png)
+![](./pics/Pasted_image_20260415235513.png)
 
 从上面的直方图可以看出，权重值的分布几乎关于0对称（本例中的分类器除外）。因此，在量化权重时，我们通常将零点设为 $Z=0$。
 由 $r = S(q-Z)$ 可得：
