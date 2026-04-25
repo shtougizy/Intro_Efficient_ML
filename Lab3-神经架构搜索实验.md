@@ -1,4 +1,4 @@
-# MIT 6.5940 EfficientML.ai — Lab 3 学习笔记：神经网络架构搜索
+# Lab 3 学习笔记：神经网络架构搜索
 
 
 > **主题**：神经网络架构搜索（Neural Architecture Search, NAS）  
