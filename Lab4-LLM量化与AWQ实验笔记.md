@@ -1,4 +1,4 @@
-# MIT 6.5940 EfficientML.ai — Lab 4 学习笔记：LLM 量化与 AWQ
+# Lab 4 学习笔记：LLM 量化与 AWQ
 
 
 > **主题**：大语言模型权重量化（Weight-only Quantization）  
