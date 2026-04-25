@@ -7,27 +7,7 @@
 
 ---
 
-## 目录
 
-1. [背景与动机](#1-背景与动机)
-2. [实验环境与模型结构](#2-实验环境与模型结构)
-   - 2.1 [VWW 数据集与预处理](#21-vww-数据集与预处理)
-   - 2.2 [MCUNetV2 超网络与设计空间](#22-mcunetv2-超网络与设计空间)
-   - 2.3 [提取子网络并评估](#23-提取子网络并评估)
-3. [准备工作：设计空间探索 (Question 1)](#3-part-0设计空间探索-question-1)
-4. [Part 1：预测器 (Question 2–4)](#4-part-1预测器-question-24)
-   - 4.1 [效率预测器 (AnalyticalEfficiencyPredictor) — Question 2](#41-效率预测器-analyticalefficiencypredictor--question-2)
-   - 4.2 [精度预测器结构 (AccuracyPredictor) — Question 3](#42-精度预测器结构-accuracypredictor--question-3)
-   - 4.3 [精度预测器训练 — Question 4](#43-精度预测器训练--question-4)
-5. [Part 2：架构搜索 (Question 5–10)](#5-part-2架构搜索-question-510)
-   - 5.1 [随机搜索 (RandomSearcher) — Question 5](#51-随机搜索-randomsearcher--question-5)
-   - 5.2 [搜索与测量准确率 — Question 6](#52-搜索与测量准确率--question-6)
-   - 5.3 [进化搜索 (EvolutionSearcher) — Question 7](#53-进化搜索-evolutionsearcher--question-7)
-   - 5.4 [调参与发现 — Question 8](#54-调参与发现--question-8)
-   - 5.5 [真实约束下的搜索与可行性判断 — Question 9, 10](#55-真实约束下的搜索与可行性判断--question-9-10)
-6. [两种搜索方法对比与总结](#6-两种搜索方法对比与总结)
-
----
 
 ## 1. 背景与动机
 
